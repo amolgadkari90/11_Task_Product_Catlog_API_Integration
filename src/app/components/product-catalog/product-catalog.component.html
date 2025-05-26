@@ -1,0 +1,32 @@
+<div class="container">
+  <button class="show-btn" (click)="showProducts()">Show Products</button>
+
+  <div *ngIf="products.length > 0; else noProducts">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.title }}</td>
+          <td [ngClass]="{
+                'low-price': product.price < 50,
+                'medium-price': product.price >= 50 && product.price <= 150,
+                'high-price': product.price > 150
+              }">
+            {{ product.price | currency }}
+          </td>
+          <td>{{ product.category }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #noProducts>
+    <p class="no-products">No products available.</p>
+  </ng-template>
+</div>
