@@ -62,3 +62,29 @@
   font-style: italic;
   margin-top: 20px;
 }
+
+.product-image {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+  background-color: #fff;
+}
+
+.low-price {
+  color: green;
+  font-weight: bold;
+}
+
+.medium-price {
+  color: blue;
+  font-weight: bold;
+}
+
+.high-price {
+  color: red;
+  font-weight: bold;
+}
+

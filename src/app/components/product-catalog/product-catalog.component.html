@@ -5,6 +5,7 @@
     <table class="product-table">
       <thead>
         <tr>
+          <th>Image</th>
           <th>Title</th>
           <th>Price</th>
           <th>Category</th>
@@ -12,6 +13,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let product of products">
+          <td>
+            <img [src]="product.image" alt="{{ product.title }}" class="product-image" />
+          </td>
           <td>{{ product.title }}</td>
           <td [ngClass]="{
                 'low-price': product.price < 50,
